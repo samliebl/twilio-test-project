@@ -1,0 +1,19 @@
+{
+  "name": "twilio-test-project",
+  "author": "Sam Liebl <stliebl@gmail.com> (https://samliebl.com)",
+  "version": "0.0.1",
+  "description": "",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "mkproj": "mkdir ./src ./lib ./dist/ ./dist/css/ ./dist/js/ && touch index.js ./dist/index.html ./dist/css/main.css ./dist/js/main.js",
+    "sync": "browser-sync start --server \"./dist\" --files \"./dist/**/*\"",
+    "start": "node .",
+    "start:dev": "nodemon . --delay \"1\" --ext \"html,css,md,js,json,sh,njk,txt,scss\" --watch \"./dist/css/\" --watch \"./dist/js/\" --watch \"./src/**/*\" --watch \"./**/*.{js,json}\"",
+    "sync:express": "browser-sync start --proxy \"https://localhost:3000\" --reload-delay 1500 --port 3000 --watch"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "twilio": "^3.49.4"
+  }
+}
